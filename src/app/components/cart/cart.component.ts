@@ -16,11 +16,15 @@ export class CartComponent implements OnInit {
       this.products = res;
       this.allProducts = this.cartApi.getTotalAmount();
     })
+    // this.invokeStripe()
   }
    removeProduct(item:any){
     this.cartApi.removeCartData(item);
    }
    removeAllProduct(){
     this.cartApi.removeAllCart();
+   }
+   checkout(amount:number){
+
    }
 }

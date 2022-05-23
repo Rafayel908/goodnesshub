@@ -8,6 +8,9 @@ import { ProductsComponent } from './components/products/products.component';
 import { CartComponent } from './components/cart/cart.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule} from "@angular/common/http";
+import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -15,12 +18,15 @@ import { HttpClientModule} from "@angular/common/http";
     HeaderComponent,
     ProductsComponent,
     CartComponent,
-    FooterComponent
+    FooterComponent,
+    CheckoutPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
