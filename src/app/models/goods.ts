@@ -8,3 +8,6 @@ export class Goods {
   quantity?:string;
   rating:any;
 }
+//      constructor(){
+//
+// }

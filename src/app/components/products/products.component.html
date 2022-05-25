@@ -47,7 +47,7 @@
       <div class="card col-md-3">
         <img src="{{item.image}}" alt="">
         <h5 class="itemdata">{{item.title}}</h5>
-        <p class="itemdata">{{item.description}}</p>
+        <p class="itemdata">{{item.description | slice:  0:50}}....</p>
         <p><strong>Price: €</strong>{{item.price}}</p>
 
         <p class="itemdata">{{item.rating.rate}}</p>

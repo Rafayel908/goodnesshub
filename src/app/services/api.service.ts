@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
+import {productsUrl} from "../config/api";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -15,3 +17,6 @@ export class ApiService {
     }))
   }
 }
+//    getPRoducts(): Observable<Product[]>{
+//   return this http.get<Product[]> (productsUrl)
+// }

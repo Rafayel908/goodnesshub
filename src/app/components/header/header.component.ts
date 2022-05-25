@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CartapiService} from "../../services/cartapi.service";
+import {CartApiService} from "../../services/cartApi.service";
 
 @Component({
   selector: 'app-header',
@@ -8,7 +8,7 @@ import {CartapiService} from "../../services/cartapi.service";
 })
 export class HeaderComponent implements OnInit {
      totalItemNumber:number=0;
-  constructor(private cartApi:CartapiService) { }
+  constructor(private cartApi:CartApiService) { }
 
   ngOnInit(): void {
     this.cartApi.getProductData().subscribe(res=>{

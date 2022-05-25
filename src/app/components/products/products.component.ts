@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from "../../services/api.service";
-import {CartapiService} from "../../services/cartapi.service";
+import {CartApiService} from "../../services/cartApi.service";
 import {ActivatedRoute} from "@angular/router";
 import {Goods} from "../../models/goods";
 
@@ -13,7 +13,7 @@ export class ProductsComponent implements OnInit {
     productList:any;
     allproducts:Goods[]=[]
   constructor(private api:ApiService,
-              private cartApi: CartapiService,
+              private cartApi: CartApiService,
               private route:ActivatedRoute
   ) { }
 
@@ -30,9 +30,9 @@ export class ProductsComponent implements OnInit {
 
     this.route.params.subscribe(params=>{
       // if(params.searchTerm)
-      //   this.productList = this.api.getProduct().
+      //   this.productList = this.api.getProduct().filter()
     })
-    console.log("ALLL", this.allproducts);
+
   }
   addtoCard(item:any){
     this.cartApi.addToCart(item)

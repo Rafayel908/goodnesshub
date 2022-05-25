@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, Observable, Subject} from "rxjs";
+import {Cart} from "../models/cart";
+import {carttUrl} from "../config/api";
+// import {Cart} from "../models/cart";
+// import {carttUrl} from "../config/api";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CartapiService {
+
+export class CartApiService {
+  subject = new Subject<any>();
    cartDatalist:any=[];
    productList =new BehaviorSubject<any>([]);
   constructor(private http:HttpClient) {  }
@@ -48,4 +54,13 @@ export class CartapiService {
     this.cartDatalist= []
      this.productList.next(this.cartDatalist)
    }
+  savtochekcout() {
+    localStorage.setItem('cart', JSON.stringify(this.cartDatalist));
+    this.subject.next('changed');
+  }
+ // Get cart items
+  getCartItems():Observable<Cart[]>{
+    return this.http.get<Cart[]>(carttUrl)
+
+  }
 }
