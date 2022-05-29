@@ -1,57 +1,14 @@
-<div class="cart-top container-fluid">
-  <div class="container d-flex">
-    <div class="items">
-
-
-    </div>
-    <div class="items">
-      <a>
-        <img src="/assets/brand-identity.png">
-        <h6>ALL Products</h6>
-      </a>
-
-    </div>
-    <div class="items">
-      <a>
-        <img src="/assets/clothes-hanger.png">
-        <h6>shirts</h6>
-      </a>
-    </div>
-    <div class="items">
-      <a>
-        <img src="/assets/pants.png">
-        <h6>trousers</h6>
-      </a>
-
-    </div>
-    <div class="items">
-      <a>
-        <img src="/assets/suit.png">
-        <h6>suits</h6>
-      </a>
-
-    </div>
-    <div class="items">
-      <a>
-        <img src="/assets/shoes.png">
-        <h6>shoes</h6>
-      </a>
-
-    </div>
-  </div>
-</div>
-
 <div class=" container">
   <div class="row">
-    <ng-container *ngFor="let item of productList">
+    <ng-container *ngFor="let item of allproducts | filter:searchKey:'name'">
       <div class="card col-md-3">
         <img src="{{item.image}}" alt="">
-        <h5 class="itemdata">{{item.title}}</h5>
+        <h5 class="itemdata">{{item.name}}</h5>
         <p class="itemdata">{{item.description | slice:  0:50}}....</p>
         <p><strong>Price: €</strong>{{item.price}}</p>
 
-        <p class="itemdata">{{item.rating.rate}}</p>
-        <ngb-rating [rate]="item.rating.rate"[max]="5"  [readonly]="true"></ngb-rating>
+        <p class="itemdata">Rate:{{item.rate}}</p>
+        <ngb-rating [rate]="item.rate" [max]="5" [readonly]="true"></ngb-rating>
         <p>{{item.category}}</p>
         <button class="btn btn-primary" (click)="addtoCard(item)">add to cart</button>
       </div>

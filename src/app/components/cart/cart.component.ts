@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CartApiService} from "../../services/cartApi.service";
+import {CartService} from "../../services/cart.service";
 
 @Component({
   selector: 'app-cart',
@@ -9,7 +9,7 @@ import {CartApiService} from "../../services/cartApi.service";
 export class CartComponent implements OnInit {
    products:any=[];
    allProducts:any=0;
-  constructor(private cartApi:CartApiService) { }
+  constructor(private cartApi:CartService) { }
 
   ngOnInit(): void {
     this.cartApi.getProductData().subscribe(res=>{
@@ -25,6 +25,6 @@ export class CartComponent implements OnInit {
     this.cartApi.removeAllCart();
    }
    checkout(amount:number){
-
+      this.allProducts
    }
 }
