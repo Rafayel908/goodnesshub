@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
 import { ProductsComponent } from './components/products/products.component';
 import { CartComponent } from './components/cart/cart.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -16,12 +15,13 @@ import {SlickCarouselModule} from "ngx-slick-carousel";
 import { DeliveryComponent } from './components/delivery/delivery.component';
 import {MDBBootstrapModule} from "angular-bootstrap-md";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {CoreModule} from "./core/core.module";
+import {ShopModule} from "./shop/shop.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     ProductsComponent,
     CartComponent,
     FooterComponent,
@@ -34,11 +34,13 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    CoreModule,
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
     SlickCarouselModule,
     BrowserAnimationsModule,
+    ShopModule,
     MDBBootstrapModule.forRoot()
 
   ],

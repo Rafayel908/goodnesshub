@@ -1,0 +1,16 @@
+<div class="card h-100 box-shadow">
+    <img src="https://loremflickr.com/320/240/shirts" alt="{{product.name}}" class="img-fluid bg-info">
+  <div class="card-body d-flex flex-column">
+    <a href="#">
+      <h6 class="text-uppercase">{{product.name}}</h6>
+    </a>
+    <span class="mb-2">{{product.price | currency:'EUR':true}}</span>
+    <p class="itemdata">Rate:{{product.rate}}</p>
+    <ngb-rating [rate]="product.rate" [max]="5" [readonly]="true"></ngb-rating>
+      <div class="btn-group mt-auto">
+        <button type="button" class="btn btn-outline-secondary fa fa-shopping-cart mr-2"></button>
+        <button type="button" class="btn btn-outline-secondary">View</button>
+      </div>
+
+    </div>
+  </div>

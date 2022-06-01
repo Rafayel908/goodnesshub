@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Goods} from "../../models/goods";
+import {Goods} from "../../shared/models/goods";
 import {FormGroup, FormBuilder} from "@angular/forms";
 import {CartService} from "../../services/cart.service";
 import {Router} from "@angular/router";

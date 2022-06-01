@@ -2,8 +2,11 @@ export interface IProduct {
   id?: number;
   name?: string;
   description?: string;
-  price?: string;
-  rate?: number;
+  price?: number;
+  rate?: any;
   created_at?: any;
   updated_at?: any;
+  image?:any;
+  links?:any;
+  category_id: number;
 }

@@ -5,7 +5,7 @@ import {productsUrl} from "../config/api";
 import {Observable, Subject} from "rxjs";
 import {environment} from "../../environments/environment";
 import { Location } from '@angular/common';
-import {Goods} from "../models/goods";
+import {Goods} from "../shared/models/goods";
 
 @Injectable({
   providedIn: 'root'
@@ -23,9 +23,9 @@ export class ApiService {
   //   }))
   // }
 
-  getProductsData(data = {}, page=1, pageSize=10):Observable<any> {
+  getProductsData():Observable<any> {
     const url = Location.joinWithSlash(
-      environment.apiUrl || '', `api/v1/products?page=${page}&&pageSize=${pageSize}`,
+      environment.apiUrl || '', `api/v1/products?page=10`
     );
     // return this.apiData.get(url,data);
     return this.http.get("http://127.0.0.1:8085/api/v1/products?page=50").pipe(map((res:any)=>{

@@ -3,8 +3,8 @@ import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, Observable, Subject} from "rxjs";
 // import {Cart} from "../models/cart";
 import {carttUrl} from "../config/api";
-import {Goods} from "../models/goods";
-import {Cart} from "../models/cart";
+import {Goods} from "../shared/models/goods";
+import {Cart} from "../shared/models/cart";
 // import {Cart} from "../models/cart";
 // import {carttUrl} from "../config/api";
 

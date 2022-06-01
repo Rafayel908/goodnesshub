@@ -11,7 +11,9 @@ export class Goods {
   updated_at?: number;
   quantity?: any;
   title?: string;
-  category:any;
+  category?:any
+  links?:any;
+  meta?:any;
 
 
 }

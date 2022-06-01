@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../services/api.service";
 import {CartService} from "../../services/cart.service";
 import {ActivatedRoute} from "@angular/router";
-import {Goods} from "../../models/goods";
+import {Goods} from "../../shared/models/goods";
 
 @Component({
   selector: 'app-products',
