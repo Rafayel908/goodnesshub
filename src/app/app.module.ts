@@ -17,6 +17,7 @@ import {MDBBootstrapModule} from "angular-bootstrap-md";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CoreModule} from "./core/core.module";
 import {ShopModule} from "./shop/shop.module";
+import {HomeModule} from "./home/home.module";
 
 
 @NgModule({
@@ -40,8 +41,8 @@ import {ShopModule} from "./shop/shop.module";
     ReactiveFormsModule,
     SlickCarouselModule,
     BrowserAnimationsModule,
-    ShopModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    HomeModule
 
   ],
   providers: [],

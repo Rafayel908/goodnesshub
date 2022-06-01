@@ -6,16 +6,21 @@ import {IBrand} from "../shared/models/brand";
 import {delay, map} from "rxjs/operators";
 import {Observable} from "rxjs";
 import {ShopParams} from "../shared/models/shopParams";
+import {IProduct} from "../shared/models/products";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShopService {
   baseUrl = 'http://185.217.127.162:8085/api/v1/'
+  id!: number | null | undefined ;
 
   constructor(private http: HttpClient) {
   }
-
+    getProduct(id:number){
+      return this.http.get<IProduct>(this.baseUrl + 'products/'+ id)
+      console.log("this......",this.http)
+    }
   getProducts(shopParams:ShopParams) {
     let params = new HttpParams();
     if(shopParams.typeId !== 0){

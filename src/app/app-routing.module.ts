@@ -4,14 +4,18 @@ import {ProductsComponent} from "./components/products/products.component";
 import {CartComponent} from "./components/cart/cart.component";
 import {CheckoutPageComponent} from "./components/checkout-page/checkout-page.component";
 import {DeliveryComponent} from "./components/delivery/delivery.component";
+import {HomeComponent} from "./home/home.component";
+import {ShopComponent} from "./shop/shop.component";
+import {ProductDetailsComponent} from "./shop/product-details/product-details.component";
 
 const routes: Routes = [
-  {path: '',redirectTo: 'products', pathMatch:'full'},
-  {path: 'products', component:ProductsComponent},
-  {path: 'cart', component:CartComponent},
-  {path: 'checkout-page',  component:CheckoutPageComponent},
-  {path: 'search:/searchTerm', component:ProductsComponent},
-  { path: 'delivery', component: DeliveryComponent },
+  {path: '',component: HomeComponent},
+  {path: 'shop',loadChildren:() =>import('./shop/shop.module').then(mod =>mod.ShopModule)},
+  {path: '**', redirectTo:'',pathMatch:'full'},
+  // {path: 'cart', component:CartComponent},
+  // {path: 'checkout-page',  component:CheckoutPageComponent},
+  // {path: 'search:/searchTerm', component:ProductsComponent},
+  // { path: 'delivery', component: DeliveryComponent },
 ];
 
 @NgModule({

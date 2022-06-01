@@ -6,6 +6,7 @@ import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
 import {SharedModule} from "../shared/shared.module";
 import {FormsModule} from "@angular/forms";
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import {ShopRoutingModule} from "./shop-routing.module";
 
 
 
@@ -19,8 +20,9 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     CommonModule,
     NgbRatingModule,
     SharedModule,
-    FormsModule
-  ],
-  exports: [ShopComponent]
+    FormsModule,
+    ShopRoutingModule
+  ]
+
 })
 export class ShopModule { }
