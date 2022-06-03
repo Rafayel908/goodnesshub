@@ -3,7 +3,7 @@ import {HttpClient, HttpParams} from "@angular/common/http";
 import {IPagination} from "../shared/models/pagination";
 import {IType} from "../shared/models/productTypes";
 import {IBrand} from "../shared/models/brand";
-import {delay, map} from "rxjs/operators";
+import {delay, map, tap} from "rxjs/operators";
 import {Observable} from "rxjs";
 import {ShopParams} from "../shared/models/shopParams";
 import {IProduct} from "../shared/models/products";
@@ -18,7 +18,14 @@ export class ShopService {
   constructor(private http: HttpClient) {
   }
     getProduct(id:number){
-      return this.http.get<IProduct>(this.baseUrl + 'products/'+ id)
+      return this.http.get<any>(this.baseUrl + 'products/'+ id)
+      //   .pipe(
+      //   tap( // Log the result or error
+      //     {
+      //       next: (data) => {return data.data}
+      //     }
+      //   )
+      // );
       console.log("this......",this.http)
     }
   getProducts(shopParams:ShopParams) {

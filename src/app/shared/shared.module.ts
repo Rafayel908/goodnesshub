@@ -5,6 +5,7 @@ import { PagingHeaderComponent } from './components/paging-header/paging-header.
 import { PagerComponent } from './components/pager/pager.component';
 import {DropdownComponent} from "./components/dropDown/dropdown.component";
 import {ClickOutsideDirective} from "./components/dropDown/click-outside.directive";
+import { OrderTotalsComponent } from './components/order-totals/order-totals.component';
 
 
 
@@ -13,7 +14,9 @@ import {ClickOutsideDirective} from "./components/dropDown/click-outside.directi
     PagingHeaderComponent,
     PagerComponent,
     DropdownComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    OrderTotalsComponent
+
   ],
   imports: [
     CommonModule,
@@ -24,7 +27,8 @@ import {ClickOutsideDirective} from "./components/dropDown/click-outside.directi
     PagingHeaderComponent,
     PagerComponent,
     DropdownComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    OrderTotalsComponent
 
   ]
 })

@@ -7,6 +7,7 @@ import {Observable, pipe} from "rxjs";
 import {IPagination} from "../shared/models/pagination";
 import {ShopParams} from "../shared/models/shopParams";
 import {DropdownModel} from "../shared/components/dropDown/select";
+import {HelperService} from "./helper/helper-service";
 
 @Component({
   selector: 'app-shop',
@@ -22,29 +23,37 @@ export class ShopComponent implements OnInit {
   types: DropdownModel[] | undefined=[] ;
   categoriesList: DropdownModel<number | undefined>[] = [];
    shopParams = new ShopParams()
-  totalCoount: number = 0;
+  totalCount: number = 0;
+   metaData: any = null;
   sortOptions = [
     {name:'Alphabetical',value:'name'},
     { name:'Price: Low to High', value: 'priceAsc'},
     { name:'Price: High to Low', value: 'priceDesc'},
   ];
 
-  constructor(private shopService:ShopService) {
-
+  constructor(
+    private shopService:ShopService,
+  ) {
   }
 
   ngOnInit(): void {
         this.getProducts()
-        this.getTypes()
+        this.getTypes() ;
   }
+
   getProducts(){
     this.shopService.getProducts(this.shopParams).subscribe(response =>{
 
       this.products = response!.data;
+      console.log('RESPONSE = ', response)
+      this.metaData = {
+        links: response!.links,
+        meta: response!.meta
+      }
        this.shopParams.pageNumber =response?.links
       this.shopParams.pageSize=response?.links
-      this.totalCoount = response?.meta.total
-      console.log('this.totalCoount ', this.totalCoount)
+      this.totalCount = response?.meta.total
+      console.log('this.totalCount ', this.totalCount)
       console.log("this products shop", this.products)
     }, error =>{
       console.log(error)

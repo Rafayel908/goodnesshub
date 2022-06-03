@@ -5,6 +5,6 @@ export interface IType {
    name?: string,
    created_at?: any,
    updated_at?: any,
-  data:  IProduct[];
+   data:  IProduct[];
 
 }

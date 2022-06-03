@@ -3,16 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './components/products/products.component';
-import { CartComponent } from './components/cart/cart.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { ProductsComponent } from './oldComponent/products/products.component';
+import { CartComponent } from './oldComponent/cart/cart.component';
+import { FooterComponent } from './oldComponent/footer/footer.component';
 import { HttpClientModule} from "@angular/common/http";
-import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
+// import { CheckoutPageComponent } from './oldComponent/checkout-page/checkout-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FilterPipe } from './shared/filter.pipe';
 import {SlickCarouselModule} from "ngx-slick-carousel";
-import { DeliveryComponent } from './components/delivery/delivery.component';
+// import { DeliveryComponent } from './oldComponent/delivery/delivery.component';
 import {MDBBootstrapModule} from "angular-bootstrap-md";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CoreModule} from "./core/core.module";
@@ -26,9 +26,8 @@ import {HomeModule} from "./home/home.module";
     ProductsComponent,
     CartComponent,
     FooterComponent,
-    CheckoutPageComponent,
     FilterPipe,
-    DeliveryComponent,
+
 
   ],
   imports: [

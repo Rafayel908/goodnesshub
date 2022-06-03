@@ -6,12 +6,16 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./paging-header.component.scss']
 })
 export class PagingHeaderComponent implements OnInit {
-   @Input() pageNumber!: number;
-   @Input() pageSize!: number;
-   @Input() totalCount!: number;
+   @Input() meta!: any;
+   // @Input() pageSize!: number;
+   // @Input() totalCount!: number;
   constructor() { }
 
   ngOnInit(): void {
+    // console.log(77777777777)
+    // console.log('pageNumber = ', this.pageNumber)
+    // console.log('pageSize = ', this.pageSize)
+    // console.log('totalCount = ', this.totalCount)
   }
 
 }

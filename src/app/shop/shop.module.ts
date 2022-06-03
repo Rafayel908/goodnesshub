@@ -7,6 +7,7 @@ import {SharedModule} from "../shared/shared.module";
 import {FormsModule} from "@angular/forms";
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import {ShopRoutingModule} from "./shop-routing.module";
+import {HelperService} from "./helper/helper-service";
 
 
 
@@ -22,7 +23,6 @@ import {ShopRoutingModule} from "./shop-routing.module";
     SharedModule,
     FormsModule,
     ShopRoutingModule
-  ]
-
+  ],
 })
 export class ShopModule { }

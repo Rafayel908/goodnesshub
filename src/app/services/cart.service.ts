@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+// import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, Observable, Subject} from "rxjs";
 // import {Cart} from "../models/cart";
 import {carttUrl} from "../config/api";
@@ -18,9 +18,9 @@ export class CartService {
   cartDatalist: any = [];
   productList = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");
-    exists:any
+  exists:any
  placeholder: any;
-  constructor(private http: HttpClient) {
+  constructor() {
     const ls = localStorage.getItem('cart')
     if(ls) this.cartDatalist.next(ls)
   }

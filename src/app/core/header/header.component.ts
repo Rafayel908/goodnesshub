@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CartService} from "../../services/cart.service";
+import {HelperService} from "../../shop/helper/helper-service";
 
 @Component({
   selector: 'app-header',
@@ -9,11 +10,21 @@ import {CartService} from "../../services/cart.service";
 export class HeaderComponent implements OnInit {
   totalItemNumber: number = 0;
   public searchTerm: string = '';
-
-  constructor(private cartApi: CartService) {
+  basketCount: number = 0;
+  constructor(private cartApi: CartService,
+              private helperService: HelperService) {
   }
 
   ngOnInit(): void {
+    if (!this.helperService.getCount()) {
+      this.helperService.setCountToLocalStorage();
+    }
+    this.helperService.subject.subscribe((data) => {
+      console.log(data,54)
+      if (data || data === 0) {
+        this.basketCount = data;
+      }
+    });
     this.cartApi.getProductData().subscribe(res => {
       this.totalItemNumber = res.length;
     })
