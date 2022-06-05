@@ -1,15 +1,29 @@
-<div class="container mt-5">
-<div class="row">
-  <div class="col-8">
-    checkout stuff
-  </div>
-  <div class="col-4">
-    <app-order-totals>
+<div class="bg-light px-4 py-3 text-uppercase font-weight-bold">
+  Order Summarty
+</div>
+<div class="p-4" *ngFor="let carts of cartTotal">
+  <p class="font-italic mb-4">Shipping costs will be added depending on choices made during checkout</p>
+  <ul class="list-unstyled mb-4" *ngIf="cartTotal">
+    <li class="d-flex justify-content-between py-3 border-bottom">
+      <strong class="text-muted">Order subtotal</strong>
+      <strong>{{carts.name}}</strong>
+    </li>
+    <li class="d-flex justify-content-between py-3 border-bottom">
+      <strong class="text-muted">shipping and handling</strong>
+      <strong>{{cartTotal.price | currency}}</strong>
+    </li>
+    <li class="d-flex justify-content-between py-3 border-bottom">
+      <strong class="text-muted">total</strong>
+      <strong>{{cartTotal | currency}}</strong>
+    </li>
+  </ul>
+</div>
 
-    </app-order-totals>
-<!--    <input [(ngModel)]="person.userId" />-->
+<div class="col-4">
+<!--    <app-order-totals>-->
+<!--       dsd-->
+<!--    </app-order-totals>-->
+
     <button class="btn" style="border: 1px solid green;" (click)="addPerson()">Finish</button>
   </div>
-</div>
 
-</div>

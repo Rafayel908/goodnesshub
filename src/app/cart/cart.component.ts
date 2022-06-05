@@ -10,7 +10,7 @@ import {IProduct} from "../shared/models/products";
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  cart$: any[] = [];
+  cart$: any [] = [];
   cartTotal$: any
   constructor(private helperService:HelperService) { }
 
@@ -43,22 +43,25 @@ export class CartComponent implements OnInit {
    if(cart.items[foundItemIndex].quantity>1){
      cart.items[foundItemIndex].quantity--
    } else{
-      this.removeFromCart(cart)
+      // this.removeFromCart(cart)
    }
     this.addToBasket(cart)
   }
 
-  removeFromCart(product:any){
-    const cartItems = this.cart$
+  removeFromCart(){
+    let cartItems = this.cart$
     if(cartItems.length>0){
       localStorage.removeItem("id")
+      console.log(cartItems)
     }else{
       // deleteCart(cartItems)
     }
   }
 
+    // this.cart$.next(this.cart$)
+
   // deleteCart(cart:any){
-  //   return
+  //   return this.
   // }
   addToBasket(product: any) {
     // @ts-ignore
